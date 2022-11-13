@@ -7,250 +7,232 @@
     <title>Document</title>
     <style>
 .contayner{
-  min-height: 266px;
+    min-height: 236px;
 width: 336px;
 margin-left: 441px;
 margin-top: 224px;
-border-radius: 10px;
-border: 1px solid #C4C4C4
+border: 1px solid #C4C4C4;
+border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
 }
 .headling{
     height: 28px;
 width: 336px;
-border-radius: 10px;
-border: 1px solid #C4C4C4;
- background: #FFDC40;
-
+margin-top: 0px;
+background: #FFDC40;
+border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 
 }
 h1{
     height: 34px;
 width: 198px;
-text-align: center;
-margin-top: 13px;
-margin-left: 69px;
-font-size: 26px;
-font-weight: 900;
-color: #000000;
-}
-
-.img{
-    height: 25px;
-width: 40px;
-border: 0px solid #C4C4C4;
-margin-left: 281px;
-margin-top: 10px;
-
+margin-top: 15px;
+margin-left: 95px;
 
 }
-
-
-input{
-  
-width: 80%;
-    height: 30px;
-    font-size: 20px;
-    margin-bottom: 0;
-    border: none;
-    outline: none;
-}
-.delete{
- 
-
-border: 0;
-
-    position: absolute;
-top: 375px;
-left: 712px;
+.icon{
+   margin-top: 20px;
+   margin-left: 281px;
 
 }
-
-.add{
-   
-margin-top: 18px;
-margin-left: 92px;
-border: 0;
-border-radius: 0;
-}
-
 ul{
-    width: 80%;
+   
+    width: 260px;
+    min-height: 40px;
     max-height: 200px;
     padding-left: 20px;
     border: 1px solid rgb(127, 127, 127);
     border-radius: 10px;
-    margin-top: 15px;
-    margin-left: 30px;
+    margin-top: 11px;
+    margin-left: 28px;
+
+
 }
-li{
+input{
+    width: 80%;
+    height: 30px;
+    margin-bottom: 0;
+    border: none;
+    outline: none;
+    
+}
+li {
     list-style-type: none;
-    padding: 2px;
+   
 }
-
-
+.delete{
+    margin-top: 8px;
+}
+.add{
+    margin-top: 18px;
+    margin-left: 92px;
+}
 
     </style>
 </head>
 <body>
-<div class="contayner">
-    <div class="headling"></div>
-    <h1>To-do list</h1>
-  <button class="img">  <img src="Group 38.png"></button>
-
+    <div class="contayner">
+        <div class="headling"></div>
+        <h1>To-do list</h1>
+       <img class="icon" src="Group 38.png">
     
-        <ul>
-            <li>
-    <input type="text" >
+        
+            <ul>
+                <li>
+        <input type="text" >
+        
     
-
-    <button class="delete"><img class="close" src="Group 56.png"></button>
-    </li>
-    </ul>
+        <img class="delete" src="Group 56.png">
+        </li>
+        </ul>
+        
+        <div class="add"><img src="Group 41.png"></div>
+          
     
-    <button class="add"><img src="Group 41.png"></div>
-      
-
-</div> 
- 
-</body>
-
-
-
-<script>
-
-
-
-let del = document.getElementsByClassName("close");
-     let allList;
-    let inputs;
-let icon=document.querySelector('.img img')
-
-icon.addEventListener('mouseover', event => {
-    if (event.target.src = 'Group 38.png') {
-        event.target.src = 'Group 73.png';
-    } else {
-        event.target.src = 'Group 91.png';
-    }
-}
-);
-
-icon.addEventListener('mouseout', event => {
-    if (event.target.src = 'Group 38.png') {
-        event.target.src = 'Group 38.png';
-    } else {
-        event.target.src = 'Group 90.png';
-    }
-});
-
-
-
-let deletetext=document.querySelector('.close')
-function changedelete(event){
-    event.target.src='Group 70.png'
-}
-function changedelete1(event){
-    event.target.src='Group 56.png'
-}
-deletetext.addEventListener('mouseover',changedelete)
-deletetext.addEventListener('mouseout',changedelete1)
-
-let li = document.querySelector('li');
-let btn = document.querySelector('.add');
-let ul = document.querySelector('ul');
-
-
-
-btn.addEventListener('click', event => {
- 
-    let newItem = document.createElement('li');
-    let input = document.createElement('input');
-    let img = document.createElement('img');
-    img.src = 'Group 56.png';
-    input.type = "text";
-    img.className = "close";
-    newItem.appendChild(input);
-    newItem.appendChild(img);
-    ul.append(newItem);
-
-   
-
-    for (let j of del) {
-        j.onmouseover = function (event) {
-            event.target.src = 'Group 70.png';
-        }
-        j.onmouseout = function (event) {
-            event.target.src = 'Group 56.png';
+    </div> 
+     
+    </body>
+    
+    
+    
+    <script>
+    
+    
+    
+    let del = document.getElementsByClassName("delete");
+         let allList;
+        let inputs;
+    let icon=document.querySelector('.icon')
+    
+   icon.addEventListener('mouseover', event => {
+        if (event.target.src = 'Group 38.png') {
+            event.target.src = 'Group 73.png';
+        } else {
+            event.target.src = 'Group 91.png';
         }
     }
-
-    allList = document.querySelectorAll('li');
-    inputs = document.querySelectorAll('input');
-    if (allList.length > 5) {
-        ul.style.overflowY = 'scroll';
+    );
+    
+    icon.addEventListener('mouseout', event => {
+        if (event.target.src = 'Group 73.png') {
+            event.target.src = 'Group 38.png';
+        } else {
+            event.target.src = 'Group 90.png';
+        }
+    });
+    
+    
+    
+    let deletetext=document.querySelector('.delete')
+    function changedelete(event){
+        event.target.src='Group 70.png'
     }
-    for (let i = 0; i < del.length; i++) {
-        del[i].onclick = function () {
-            let div = this.parentElement;
-            if (del.length > 1) {
-                div.remove();
-                allList = document.querySelectorAll('li');
-                inputs = document.querySelectorAll('input');
-            } 
-            if (allList.length <= 5) {
-                ul.style.overflowY = 'hidden';
+    function changedelete1(event){
+        event.target.src='Group 56.png'
+    }
+    deletetext.addEventListener('mouseover',changedelete)
+    deletetext.addEventListener('mouseout',changedelete1)
+    
+    let li = document.querySelector('li');
+    let btn = document.querySelector('.add');
+    let ul = document.querySelector('ul');
+    
+    
+    
+    btn.addEventListener('click', event => {
+     
+
+        
+        let newItem = document.createElement('li');
+        let input = document.createElement('input');
+        let img = document.createElement('img');
+        img.src = 'Group 56.png';
+        input.type = "text";
+        img.className = "delete";
+        newItem.appendChild(input);
+        newItem.appendChild(img);
+        ul.append(newItem);
+    
+       
+    
+        for (let j of del) {
+            j.onmouseover = function (event) {
+                event.target.src = 'Group 70.png';
             }
-
+            j.onmouseout = function (event) {
+                event.target.src = 'Group 56.png';
+            }
+        }
+    
+        allList = document.querySelectorAll('li');
+        inputs = document.querySelectorAll('input');
+        if (allList.length > 5) {
+            ul.style.overflowY = 'scroll';
+        }
+        for (let i = 0; i < del.length; i++) {
+            del[i].onclick = function () {
+                let div = this.parentElement;
+                if (del.length > 1) {
+                    div.remove();
+                    allList = document.querySelectorAll('li');
+                    inputs = document.querySelectorAll('input');
+                } 
+                if (allList.length <= 5) {
+                    ul.style.overflowY = 'hidden';
+                }
+    
+               
+            }
+        }
+    })
+    
+    
+    icon.addEventListener('click', event => {
+        let newInputs = [];
+        if (event.target.src = 'Group 38.png') {
+            event.target.src = 'Group 91.png';
+           
+            
+            for (let i = 0; i < allList.length; i++) {
+                newInputs.push(inputs[i].value);
+            }
+            newInputs.sort((a, b) => {
+                let a1 = a.toLowerCase();
+                let b1 = b.toLowerCase();
+                if (a1 < b1) {
+                     return -1;
+                 }
+                if (b1 > b1) {
+                     return 1;
+                 }
+                return 0;
+            });
+            for (let i = 0; i < newInputs.length; i++) {
+                inputs[i].value = newInputs[i];
+            }
+        } else {
+            event.target.src = 'Group 73.png';
+           
+           
+            for (let i = 0; i < allList.length; i++) {
+                newInputs.push(inputs[i].value);
+            }
+            newInputs.sort((a, b) => {
+                let a1 = a.toLowerCase();
+                let b1 = b.toLowerCase();
+                if (a1 < b1) { 
+                    return 1; 
+                }
+                if (a1 > b1) {
+                     return -1; 
+                }
+                return 0;
+            });
            
         }
-    }
-})
-
-
-icon.addEventListener('click', event => {
-    let newInputs = [];
-    if (event.target.src = 'Group 38.png') {
-        event.target.src = 'Group 91.png';
-       
-        
-        for (let i = 0; i < allList.length; i++) {
-            newInputs.push(inputs[i].value);
-        }
-        newInputs.sort((a, b) => {
-            let a1 = a.toLowerCase();
-            let b1 = b.toLowerCase();
-            if (a1 < b1) {
-                 return -1;
-             }
-            if (b1 > b1) {
-                 return 1;
-             }
-            return 0;
-        });
-        for (let i = 0; i < newInputs.length; i++) {
-            inputs[i].value = newInputs[i];
-        }
-    } else {
-        event.target.src = 'Group 73.png';
-       
-       
-        for (let i = 0; i < allList.length; i++) {
-            newInputs.push(inputs[i].value);
-        }
-        newInputs.sort((a, b) => {
-            let a1 = a.toLowerCase();
-            let b1 = b.toLowerCase();
-            if (a1 < b1) { 
-                return 1; 
-            }
-            if (a1 > b1) {
-                 return -1; 
-            }
-            return 0;
-        });
-       
-    }
-})
-
+    })
+    
    </script>
 </html>
